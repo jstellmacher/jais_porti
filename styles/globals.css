@@ -2,20 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  font-family: "Satoshi", sans-serif;
 }
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -25,3 +18,400 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !Neumorphism */
+.container button:hover {
+  box-shadow: inset -10px -10px 20px #ffffff, inset 10px 10px 20px #ceced1;
+}
+/* !Neumorphism */
+.menu ul a {
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+  /* margin: 0 8px; */
+  /* font-size: 18px; */
+  /* color: black; */
+  /* font-weight: 400; */
+  /* display: inline-flex; */
+  /* padding: 10px 12px; */
+  /* position: relative; */
+  /* border-radius: 25px; */
+  /* white-space: nowrap; */
+}
+/* !Neumorphism */
+.container button {
+  background: #ebeef1;
+  height: 8rem;
+  box-shadow: -3px -3px 3px #ffffff, 3px 3px 3px #ceced1;
+  cursor: pointer;
+}
+nav {
+  width: 100%;
+  padding: 12px 0;
+  background: #ecf0f3;
+  box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+}
+
+nav .menu {
+  max-width: 1270px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu .logo {
+  display: flex;
+  align-items: center;
+}
+/*this was so damn annoying^*/
+.menu .logo img {
+  width: 10%;
+  aspect-ratio: square;
+  object-fit: contain;
+  mix-blend-mode: darken;
+  border-radius: 25%;
+  box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #878787;
+}
+.menu .logo img:hover {
+  box-shadow: -3px -3px 7px #ffa5a5, 3px 3px 5px #ababff;
+  color: none;
+}
+nav label.button {
+  color: #31344b;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+}
+
+nav label.cancel {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  /*display:flex;*/
+}
+
+#check {
+  display: none;
+}
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
+.glass {
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.1)
+  );
+  /* min-height: 80vh; */
+  /* width: 60%; */
+  /* border-radius: 25px; */
+  /* z-index: 1; */
+  /* backdrop-filter: blur(1.5rem); */
+  /* box-shadow: -5px -5px 5px rgba(255, 255, 255, .9),
+              5px 5px 5px rgba(253, 254, 255, 0.8); */
+}
+
+/*keyframe area*/
+
+h1 {
+  position: relative;
+  top: 50px;
+  width: 100%;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 50px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+  color: #31344b;
+}
+
+/* Animation */
+.anim-typewriter {
+  animation: typewriter 2.8s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms steps(58) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 58%;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+  50% {
+    border-color: #31344b;
+  }
+}
+.projects {
+  /* display: inline-block; */
+  /* margin-top: 2rem; */
+  /* min-height: 30vh; */
+  /* width: 85%; */
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.1)
+  );
+  border-radius: 25px;
+  z-index: 2;
+  backdrop-filter: blur(1rem);
+  box-shadow: inset 5px 5px 5px rgba(163, 177, 198, 0.9),
+    inset -5px -5px 5px rgba(255, 255, 255, 1);
+}
+.mobile {
+  display: none;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/*@media is a rule for */
+/* ! this is awesome I am proud of me */
+@media (min-width: 370px) and (max-width: 640px) {
+  .anim-typewriter {
+    display: none;
+  }
+}
+@media (max-width: 375px) {
+  .anim-typewriter {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .glass {
+    width: 100%;
+  }
+}
+
+@media (max-width: 940px) {
+  .glass {
+    width: 100%;
+    float: center;
+    border-radius: 0px;
+  }
+  /* trying to make mobile show my name without typewriter */
+  .menu ul {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    /* left makes the box slide out */
+    /*make this 100% after you find the hamburger icon - Import it*/
+    width: 100%;
+    max-width: 400px;
+    padding-top: 8%;
+    height: 100%;
+    background: #ecf0f3;
+    box-shadow: 0 5px 10px #b0b0b5;
+    z-index: 12;
+    /*z index is */
+    transition: all 0.3s ease;
+  }
+  .menu ul a:hover:before {
+    box-shadow: none;
+  }
+  nav label.burger {
+    display: block;
+  }
+  #check:checked ~ label.burger {
+    display: none;
+  }
+  #check:checked ~ ul label.cancel {
+    display: block;
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+  }
+
+  /* .menu ul a {
+    display: block;
+    makes a long horizontal block
+    font-size: 23px;
+    width: 100%;
+    margin-top: 30px;
+    box-shadow: none;
+    text-align: center;
+    max-width: 90%;
+  } */
+}
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/*keyframe is "animation is created by gradually changing from one set of CSS styles to another"(thanks https://www.w3schools.com/cssref/css3_pr_animation-keyframes.php)*/
+/* h2 {
+  text-align: center;
+  margin-top: 2rem;
+  padding: auto;
+  font-weight: lighter;
+  color: #31344b;
+} */
+/* .container {
+  width: 100%;
+  background: none;
+  text-align: center;
+} */
+/* .inline-buttons{
+  width: 100%;} */
+/* .container button{
+  height: 8rem;
+  max-height: 8rem;
+  padding: 15px;
+  margin: 15px;
+width: 20%;
+font-size: 1rem;
+  background: #ebeef1;
+  border: none;
+  border-radius: 25px;
+color: #03b5aa;
+color:#31344b;
+  box-shadow: -3px -3px 3px #ffffff,
+              3px 3px 3px #ceced1;
+  cursor: pointer;
+  max-width: 60%;
+  
+} */
+/* .container #button:hover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}  */
+/* .container button:hover::after {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+  border-radius: 25px;
+  cursor: pointer;
+}  */
+/* #hr-line {
+   
+  display: inline-block;
+  height: 25px;
+  
+  border-radius: 5px;
+  background: #d6d6d6;
+  box-shadow: 5px 5px 5px rgba(163, 177, 198, 1), 
+              -5px -5px 5px rgb(255, 255, 255);  
+  width: 1%;
+  margin-top: 2rem;
+} */
+/* h3{
+  margin-top: 2rem;
+  font-weight: lighter;
+ 
+} */
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* .about-me {
+  height: 100vh;
+  background-color: #c3fffb;
+} */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* footer {
+  height: 300px;
+  background-color: black;
+  z-index: 1;
+} */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* ul {
+  font-size: 40px;
+  z-index: 1;
+  margin: 5px;
+  padding: 5px;
+} */
+/*THANK YOU FOR THE TUTORIAL CODINGLAB https://youtu.be/ps575maf37Y*/
+/*?rem unit of measurement = root em”, a unit of measurement that represents the font size of the root element (thank you https://www.sitepoint.com/understanding-and-using-rem-units-in-css/*/
+/*html{
+  background-color: #0c1618;
+}*/
+/*body{
+  /*background: rgba(249, 98, 125, 10%);
+  background: none;
+}*/
+
+/* .menu .logo img:hover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+  border-radius: 25px;
+} */
+
+/* .menu .logo a {
+  padding: 0;
+  margin: 0 8px;
+  font-size: 28px;
+  font-weight: 600;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: #31344b;
+  box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 25px;
+}  */
+
+/* .menu .logo a:hover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+  border-radius: 25px;
+} */
+/* .menu .logo a:hover {
+  box-shadow: none;
+  color: #e63946;
+} */
+
+/* .menu ul {
+  list-style: none;
+  display: flex;
+} */
+
+/* .menu ul a:hover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+  border-radius: 25px;
+} */
+
+/* .menu ul a:hover {
+  color: #00635d;
+  box-shadow: none;
+} */
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/*trying to learn responsive design as I learn the rest so that I can stay current and future proof. yay mobile ...*/
+/*ABOVE IS THE NAVBAR ONLY ---- below will be the content*/
