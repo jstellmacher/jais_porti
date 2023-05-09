@@ -32,10 +32,11 @@ function Nav() {
         <input type="checkbox" id="check" />
 
         <div className="logo gap-4 text-2xl font-bold text-blue-40">
-          <Image
+          <img
             src="/img/logo/Alternate.png"
             alt="Stellar Logo with space background"
           />
+          {/* use <Image /> which is built into next.js but issue is resizing it */}
           <a
             className="bg-gray-100 px-4 py-2 shadow-md shadow-gray-400 rounded-xl hover:shadow-inner hover:shadow-gray-400"
             href="./index.html"
