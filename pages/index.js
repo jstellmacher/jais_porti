@@ -1,4 +1,6 @@
+// import Script from "next/script";
 import { FiMenu, FiX } from "react-icons/fi";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -30,7 +32,7 @@ function Nav() {
         <input type="checkbox" id="check" />
 
         <div className="logo gap-4 text-2xl font-bold text-blue-40">
-          <img
+          <Image
             src="/img/logo/Alternate.png"
             alt="Stellar Logo with space background"
           />
