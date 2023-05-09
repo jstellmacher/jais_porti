@@ -14,7 +14,7 @@ function NavBtn({ href, label }) {
     <li>
       <a
         href={href}
-        className="rounded-lg bg-white flex mt-4 mb-4 md:bg-white text-lg px-4 py-2 pt-2 pb-2.5 "
+        className="rounded-lg bg-white flex mt-4 mb-4 md:bg-white text-lg px-4 py-2 pt-2 pb-2.5 hover:bg-black hover:text-white hover:shadow-lg hover:shadow-gray-600"
       >
         {/* hover:bg-blue-40 hover:border-white hover:border-s-2 hover:border-r-2 hover:border-t-2 hover:border-b-2 hover:text-white */}
         {label}
@@ -35,15 +35,15 @@ function Nav() {
             alt="Stellar Logo with space background"
           />
           <a
-            className="bg-gray-100 px-4 py-2 shadow-xl rounded-xl"
+            className="bg-gray-100 px-4 py-2 shadow-md shadow-gray-400 rounded-xl hover:shadow-inner hover:shadow-gray-400"
             href="./index.html"
           >
             Stellar Stellmacher
           </a>
         </div>
 
-        <ul className="gap-2 flex">
-          <label class="button cancel" for="check">
+        <ul className="gap-4 flex">
+          <label className="button cancel" for="check">
             {" "}
             <FiX />{" "}
           </label>
@@ -53,7 +53,7 @@ function Nav() {
 
           <NavBtn href="#Contact" label="Contact" />
         </ul>
-        <label class="button burger" for="check">
+        <label className="button burger" for="check">
           {" "}
           <FiMenu />{" "}
         </label>
@@ -86,9 +86,9 @@ function Project({ label, src }) {
   return (
     <div
       style={{ backgroundImage: `url(${src})` }}
-      className="rounded-2xl bg-cover flex items-end justify-center bg-gray-400 w-full aspect-square text-center shadow-black shadow-2xl"
+      className="rounded-2xl bg-cover flex items-end justify-center bg-gray-400 w-full aspect-square text-center shadow-gray-400 shadow-xl hover:animate-bounce"
     >
-      <div className="bg-blue-500 rounded-xl py-2 px-4">{label}</div>
+      <div className="bg-blue-40 rounded-xl py-2 px-4 text-white">{label}</div>
     </div>
   );
 }
@@ -96,7 +96,7 @@ function Project({ label, src }) {
 function Main() {
   return (
     <main>
-      <section class="glass">
+      <section className="glass">
         <div className="landing shadow-2xl">
           <h1 className="anim-typewriter ">Hello, I'm Jai</h1>
           <div className="text-blue-40 p-4 sm:hidden text-center text-4xl font-semibold">
@@ -109,12 +109,12 @@ function Main() {
               <Button name="Download CV" Icon={AiOutlineDownload} />
               <Button name="About Me" Icon={AiOutlineInfoCircle} />
             </div>
-            <div className="hr-rule w-full px-8">
-              <div
-                id="hr-line"
-                className=" shadow-inner shadow-gray-500 bg-white rounded-lg h-8 justify-center"
-              ></div>
-            </div>
+            {/* <div className="hr-rule w-full px-8"> */}
+            <div
+              id="hr-line"
+              className=" shadow-inner shadow-gray-500 bg-white rounded-lg h-8 justify-center mx-8"
+            ></div>
+            {/* </div> */}
             <H2 input="Projects" />
             <div className="m-8">
               <div className="projects gap-4 grid grid-cols-4 p-4">
@@ -123,7 +123,10 @@ function Main() {
                   src="https://picsum.photos/200/300?random=2"
                   label="Test 2"
                 />
-                <Project src="https://picsum.photos/random=3" label="Test 3" />
+                <Project
+                  src="https://picsum.photos/200/300?random=3"
+                  label="Test 3"
+                />
                 <Project
                   src="https://picsum.photos/200/300?random=4"
                   label="Test 4"

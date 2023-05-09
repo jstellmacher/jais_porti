@@ -137,6 +137,7 @@ h1 {
 .anim-typewriter {
   animation: typewriter 2.8s steps(44) 1s 1 normal both,
     blinkTextCursor 500ms steps(58) infinite normal;
+  font-weight: bold;
 }
 @keyframes typewriter {
   from {
